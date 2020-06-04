@@ -1176,18 +1176,23 @@ inspired by tinysolitarysoldiers.blogspot.com & others many thanks to Carsten, B
 			}
 		/* end show/hide stuff */
 
-		function readExternalFile(file, callback){
-			var rawFile = new XMLHttpRequest();
-			rawFile.open("GET", file, false);
-			rawFile.onreadystatechange = function(){
-				if(rawFile.readyState === 4){
-					if(rawFile.status === 200 || rawFile.status == 0){
-						callback(rawFile.responseText);
-					}
-				}
-			}
-			rawFile.send(null);
-		}
+    function readTextFile(file, callback){
+      var rawFile = new XMLHttpRequest();
+      rawFile.open("GET", file, false);
+      rawFile.onreadystatechange = function (){
+        if(rawFile.readyState === 4){
+          if(rawFile.status === 200 || rawFile.status == 0){
+            var allText = rawFile.responseText;
+            alert(allText);
+            callback(rawFile.responseText);
+          }else{
+            return;
+          }
+        }
+      }
+      rawFile.send(null);
+    }
+
 		function getRandomElements(numItems, tArray){
 			 // get random element(s) from array, do not repeat any, returns array with item selected AND roll #
 			var randRoll, newItem;
