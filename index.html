@@ -1194,7 +1194,11 @@ inspired by tinysolitarysoldiers.blogspot.com & others many thanks to Carsten, B
       }
       rawFile.send(null);
     }
-
+		function randomThingToStory(data){
+      var thingArray = data.split(",")
+      var newThing = getRandomElements(1, thingArray);
+     addResultToStory("", "generator_text", "", newThing[0], "generatorsBtnsexpand");
+    };
 		function getRandomElements(numItems, tArray){
 			 // get random element(s) from array, do not repeat any, returns array with item selected AND roll #
 			var randRoll, newItem;
