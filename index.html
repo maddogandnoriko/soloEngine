@@ -1196,7 +1196,7 @@ inspired by tinysolitarysoldiers.blogspot.com & others many thanks to Carsten, B
       rawFile.send(null);
     }
 		function randomThingToStory(data){
-      var thingArray = data.split(",")
+      var thingArray = JSON.parse(data);
       var newThing = getRandomElements(1, thingArray);
      addResultToStory("", "generator_text", "", newThing[0], "generatorsBtnsexpand");
     };
