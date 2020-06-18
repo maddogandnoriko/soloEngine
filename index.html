@@ -675,7 +675,7 @@ inspired by tinysolitarysoldiers.blogspot.com & others many thanks to Carsten, B
 									<option value="Mind">Ranged</option>
 								</select>
 							</div>
-							<label><span id="attackAbilityBonusText">Body</span> Score<input type="text" name="attackAbilityBonus" id="attackAbilityBonus" value="" style="width:30px;"></label>
+							<label><span id="attackAbilityBonusText">Body(or NPC HD)</span> Score<input type="text" name="attackAbilityBonus" id="attackAbilityBonus" value="" style="width:30px;"></label>
 							<form>
 								<input type="radio" name="Advantage/Disadvantage" value="Normal" id="meleeNormal" checked="checked">None 
 								<input type="radio" name="Advantage/Disadvantage" value="Advantage" id="meleeAdvantage">Advantage 
@@ -1617,11 +1617,11 @@ inspired by tinysolitarysoldiers.blogspot.com & others many thanks to Carsten, B
 			document.getElementById("abilityBonus").value = "";
 		}
 		function changeAttackerAbility(){
-				var attackAbilityRadio = document.getElementById("attackAbilityRadio");
-				var attackAbilitySpan = document.getElementById("attackAbilityBonusText");
-				attackAbilitySpan.innerHTML = attackAbilityRadio.value;
-				document.getElementById("attackAbilityBonus").value = "";
-			}
+			var attackAbilityRadio = document.getElementById("attackAbilityRadio");
+			var attackAbilitySpan = document.getElementById("attackAbilityBonusText");
+			attackAbilitySpan.innerHTML = attackAbilityRadio.value +"(or NPC HD)";
+			document.getElementById("attackAbilityBonus").value = "";
+		}
 		function meleeAttack(){
 			var boldText, dieRollText, resultText, menuIdToClose, abilityAbbr, attackRoll, attackAbilityBonus,defendArmorDefense,attackAbility,attackRolls,attackAdvantage,attackDisadvantage;
 				
