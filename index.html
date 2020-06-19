@@ -901,6 +901,7 @@ inspired by tinysolitarysoldiers.blogspot.com & others many thanks to Carsten, B
     window.onload = function(){
   		reloadlocalStorage();
   		//setTimeout(function(){window.scrollTo(0, 1);}, 0);
+  		moveCursorToEnd();
   		populateLanguageDD();
   		populateTerrainDD();
   		populateMonsterDD();
@@ -971,10 +972,7 @@ inspired by tinysolitarysoldiers.blogspot.com & others many thanks to Carsten, B
       var range = targetEditor.createRange();
       range.moveToElementEditEnd(range.root);
       targetEditor.insertHtml(html, 'html', range);
-      
-      
-      range = targetEditor.createRange();
-      range.moveToElementEditEnd(range.root);
+ 
       
      // var range = me.editor.createRange();
 //range.moveToElementEditEnd( range.root );
@@ -985,6 +983,18 @@ inspired by tinysolitarysoldiers.blogspot.com & others many thanks to Carsten, B
 
 
     }
+    
+    
+    
+    function moveCursorToEnd(){
+      var targetEditor = CKEDITOR.instances['LogBook'];
+      var  = targetEditor.createRange();
+      range.moveToElementEditEnd(range.root);
+    }
+    
+    
+    
+    
     function elementTextToStory(elementId,menuIdToClose){
       var theHTML = document.getElementById(elementId).innerHTML;
       addResultToStory("","","", theHTML, menuIdToClose)
@@ -1023,6 +1033,10 @@ inspired by tinysolitarysoldiers.blogspot.com & others many thanks to Carsten, B
 				localStorage.setItem("notes", notesHTML);
 		  }
 		}
+		
+		
+		
+		
 		function reloadlocalStorage(){
 			if(typeof(Storage) !== "undefined"){
 				document.getElementById('storyTitle').innerHTML = localStorage.getItem("title");
@@ -1033,6 +1047,11 @@ inspired by tinysolitarysoldiers.blogspot.com & others many thanks to Carsten, B
 				if(localStorage.getItem('saveCharCreateAlert') == 'true') showCharCreateAlert();
 			}
 		}
+		
+		
+		
+		
+		
 		function timeToStory(timeUnit){
 			var contents;
 			if(timeUnit == 'round') resultText = '+6 seconds';
