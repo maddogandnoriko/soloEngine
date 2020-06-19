@@ -901,7 +901,7 @@ inspired by tinysolitarysoldiers.blogspot.com & others many thanks to Carsten, B
     window.onload = function(){
   		reloadlocalStorage();
   		//setTimeout(function(){window.scrollTo(0, 1);}, 0);
-  		moveCursorToEnd();
+  		
   		populateLanguageDD();
   		populateTerrainDD();
   		populateMonsterDD();
@@ -1046,6 +1046,7 @@ inspired by tinysolitarysoldiers.blogspot.com & others many thanks to Carsten, B
 				document.getElementById('myNotes').innerHTML = localStorage.getItem("notes");
 				if(localStorage.getItem('saveAlert') == 'true') closeNotice('abilityAlert');
 				if(localStorage.getItem('saveCharCreateAlert') == 'true') showCharCreateAlert();
+				moveCursorToEnd();
 			}
 		}
 		
