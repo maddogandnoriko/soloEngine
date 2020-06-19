@@ -970,6 +970,7 @@ inspired by tinysolitarysoldiers.blogspot.com & others many thanks to Carsten, B
     function insertInCkeditor(html){
       var targetEditor = CKEDITOR.instances['LogBook'];
       var range = targetEditor.createRange();
+      condole.log('range:'+range);
       range.moveToElementEditEnd(range.root);
       targetEditor.insertHtml(html, 'html', range);
  
