@@ -971,6 +971,19 @@ inspired by tinysolitarysoldiers.blogspot.com & others many thanks to Carsten, B
       var range = targetEditor.createRange();
       range.moveToElementEditEnd(range.root);
       targetEditor.insertHtml(html, 'html', range);
+      
+      
+      range = targetEditor.createRange();
+      range.moveToElementEditEnd(range.root);
+      
+     // var range = me.editor.createRange();
+//range.moveToElementEditEnd( range.root );
+//me.editor.getSelection().selectRanges( [ range ] );
+
+
+
+
+
     }
     function elementTextToStory(elementId,menuIdToClose){
       var theHTML = document.getElementById(elementId).innerHTML;
