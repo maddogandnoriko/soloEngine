@@ -855,8 +855,7 @@ inspired by tinysolitarysoldiers.blogspot.com & others many thanks to Carsten, B
 				</div>
 			</section>
       <section id='Log_Book'>
-				<textarea id="LogBook" name="LogBook">&lt;p&gt;
-	        Your story goes here.&gt;.&lt;/p&gt;
+				<textarea id="LogBook" name="LogBook">
         </textarea>
 			</section>
 			<section>		
@@ -1025,6 +1024,8 @@ inspired by tinysolitarysoldiers.blogspot.com & others many thanks to Carsten, B
 				if(localStorage.getItem('saveAlert') == 'true') closeNotice('abilityAlert');
 				if(localStorage.getItem('saveCharCreateAlert') == 'true') showCharCreateAlert();
 				callback();
+			}else{
+			  insertInCkeditor("<p>Your story goes here</p>");
 			}
 		}
 		function timeToStory(timeUnit){
