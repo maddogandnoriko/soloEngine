@@ -899,7 +899,6 @@ inspired by tinysolitarysoldiers.blogspot.com & others many thanks to Carsten, B
 	  //window.onscroll = function(){stickHeader()};
 
     window.onload = function(){
-  		reloadlocalStorage();
   		//setTimeout(function(){window.scrollTo(0, 1);}, 0);
   		
   		populateLanguageDD();
@@ -959,6 +958,9 @@ inspired by tinysolitarysoldiers.blogspot.com & others many thanks to Carsten, B
       updatelocalStorage();
     });
     CKEDITOR.disableAutoInline = true;
+    CKEDITOR.instances.LogBook.on('instanceReady',function(){
+      reloadlocalStorage(moveCursorToEnd);
+    });
     /*
       CKEDITOR.inline('div2');
       CKEDITOR.inline('div2',{
@@ -974,22 +976,11 @@ inspired by tinysolitarysoldiers.blogspot.com & others many thanks to Carsten, B
       range.moveToElementEditEnd(range.root);
       targetEditor.insertHtml(html, 'html', range);
     }
-    
-    
-    
     function moveCursorToEnd(){
-      var targetEditor = CKEDITOR.instances['LogBook'];
+     var targetEditor = CKEDITOR.instances['LogBook'];
       var range = targetEditor.createRange();
       range.moveToElementEditEnd(range.root);
-      targetEditor.getSelection().selectRanges( [ range ] );
-    }
-    
-    
-    
-    
-    function elementTextToStory(elementId,menuIdToClose){
-      var theHTML = document.getElementById(elementId).innerHTML;
-      addResultToStory("","","", theHTML, menuIdToClose)
+      targetEditor.insertHtml("", 'html', range);
     }
 		function addResultToStory(boldText, style_class, dieRollText, resultText, menuIdToClose){
 			var boldElement, rollText, newElement;
@@ -1025,25 +1016,18 @@ inspired by tinysolitarysoldiers.blogspot.com & others many thanks to Carsten, B
 				localStorage.setItem("notes", notesHTML);
 		  }
 		}
-		
-		
-
-		function reloadlocalStorage(){
+		function reloadlocalStorage(callback){
 			if(typeof(Storage) !== "undefined"){
 				document.getElementById('storyTitle').innerHTML = localStorage.getItem("title");
-				CKEDITOR.instances.LogBook.setData(localStorage.getItem("story"));
+				//CKEDITOR.instances.LogBook.setData(localStorage.getItem("story"));
+				addResultToStory("", "", "", localStorage.getItem("story"), "");
 				document.getElementById('charSheet').innerHTML = localStorage.getItem("character");
 				document.getElementById('myNotes').innerHTML = localStorage.getItem("notes");
 				if(localStorage.getItem('saveAlert') == 'true') closeNotice('abilityAlert');
 				if(localStorage.getItem('saveCharCreateAlert') == 'true') showCharCreateAlert();
-	
+				callback();
 			}
 		}
-		
-		
-		
-		
-		
 		function timeToStory(timeUnit){
 			var contents;
 			if(timeUnit == 'round') resultText = '+6 seconds';
