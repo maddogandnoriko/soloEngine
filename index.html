@@ -1019,8 +1019,7 @@ inspired by tinysolitarysoldiers.blogspot.com & others many thanks to Carsten, B
 		function reloadlocalStorage(callback){
 			if(typeof(Storage) !== "undefined"){
 				document.getElementById('storyTitle').innerHTML = localStorage.getItem("title");
-				//CKEDITOR.instances.LogBook.setData(localStorage.getItem("story"));
-				addResultToStory("", "", "", localStorage.getItem("story"), "");
+				insertInCkeditor(localStorage.getItem("story"));
 				document.getElementById('charSheet').innerHTML = localStorage.getItem("character");
 				document.getElementById('myNotes').innerHTML = localStorage.getItem("notes");
 				if(localStorage.getItem('saveAlert') == 'true') closeNotice('abilityAlert');
