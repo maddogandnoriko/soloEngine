@@ -1477,8 +1477,8 @@ inspired by tinysolitarysoldiers.blogspot.com & others many thanks to Carsten, B
 			addResultToStory(difficultText, "oracletext", difficultRollText, '', 'diceBtnExpand');
 		}
 		function randomModalDifficulty(){
-		  var newDifficult = (1, difficulties);
-			document.getElementById('checkDifficulty').value = newDifficult;
+		  var newDifficult = getRandomElements(1, difficulties);
+			document.getElementById('checkDifficulty').value = newDifficult[0][1];
 		}
 		function pickAPlot(howChoose){
 			var newPlot;
