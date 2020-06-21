@@ -1472,7 +1472,7 @@ inspired by tinysolitarysoldiers.blogspot.com & others many thanks to Carsten, B
 		}
 		function randomDifficulty(){
 		  var newDifficult = getRandomElements(1, difficulties);
-			var difficultRollText = 'd6 roll: ' + newDifficult[1];
+			var difficultRollText = 'd6 roll: ' + newDifficult[0][1];
 			var difficultText = newDifficult[0][0][0]+"("+newDifficult[0][0][1]+")";
 			addResultToStory(difficultText, "oracletext", difficultRollText, '', 'diceBtnExpand');
 		}
