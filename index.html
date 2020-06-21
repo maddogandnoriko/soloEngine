@@ -1218,24 +1218,19 @@ inspired by tinysolitarysoldiers.blogspot.com & others many thanks to Carsten, B
 		function getRandomElements(numItems, tArray){
 			 // get random element(s) from array, do not repeat any, returns array with item selected AND roll #
 			var randRoll, newItem;
-			var newList = [], listRoll = [];
+			var newList = [], listOfRolls = [];
 			for(var i=0;i<numItems;i++){
-				
-				
 				randRoll = rollDice(tArray.length,'Y');
-				
-			//var randomMonth = months[Math.floor(Math.random() * months.length)];
-			
 				newItem = tArray[randRoll-1];
-				if (tArray.length < numItems || !isInArray(newItem, newList)){
-						newList.push(newItem);
+				if (tArray.length < numItems || !isInArray(randRoll, listOfRolls)){
+						newList.push([newItem,randRoll]);
+						listOfRolls.push(randRoll);
+						//console.log(newList)
 				} else {
 					i--;
 				}
 			}
-			listRoll.push(newList);
-			listRoll.push(randRoll);
-			return listRoll;
+			return newList;
 		}
 		function isInArray(value, array){
 			 // usage isInArray(1, [1,2,3]);  //true
