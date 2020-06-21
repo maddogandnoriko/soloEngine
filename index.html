@@ -1472,6 +1472,12 @@ inspired by tinysolitarysoldiers.blogspot.com & others many thanks to Carsten, B
 			}
 			addResultToStory("", "normal", "", imagesLine, 'diceBtnExpand');
 		}
+		function randomDifficulty(){
+		  var newDifficult = getRandomElements(1, difficulties);
+			var difficultRollText = 'd6 roll: ' + newDifficult[1];
+			var difficultText = newDifficult[0][0][0]+"("+newDifficult[0][0][1]+")";
+			addResultToStory(difficultText, "oracletext", difficultRollText, '', 'diceBtnExpand');
+		}
 		function randomModalDifficulty(){
 		  var newDifficult = (1, difficulties);
 			document.getElementById('checkDifficulty').value = newDifficult;
