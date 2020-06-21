@@ -976,7 +976,6 @@ inspired by tinysolitarysoldiers.blogspot.com & others many thanks to Carsten, B
     function insertInCkeditor(html){
       var targetEditor = CKEDITOR.instances['LogBook'];
       var range = targetEditor.createRange();
-      console.log('range:'+range);
       range.moveToElementEditEnd(range.root);
       targetEditor.insertHtml(html, 'html', range);
     }
@@ -997,7 +996,6 @@ inspired by tinysolitarysoldiers.blogspot.com & others many thanks to Carsten, B
 				rollText = ' (' + dieRollText +')';
 				newElement+=rollText;
 			}
-			console.log(newElement);
 			if((boldText !==''||dieRollText !== '') && resultText !== ''){
 			  newElement += ':';
 			}
