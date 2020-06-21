@@ -1474,6 +1474,11 @@ inspired by tinysolitarysoldiers.blogspot.com & others many thanks to Carsten, B
 			}
 			addResultToStory("", "normal", "", imagesLine, 'diceBtnExpand');
 		}
+		function randomDifficulty(){
+		  var newDifficult = getRandomElements(1, difficulties); 
+			var difficultText = 'd6 roll: ' + newDifficult[1];
+			addResultToStory(newDifficult[0], "oracletext", difficultText, '', 'diceBtnExpand');
+		}
 		function pickAPlot(howChoose){
 			var newPlot;
 			if(howChoose == 'choose') return thePlots;
