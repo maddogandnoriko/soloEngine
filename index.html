@@ -1348,7 +1348,7 @@ inspired by tinysolitarysoldiers.blogspot.com & others many thanks to Carsten, B
 			if(TwistDie == 1){  //there's a twist
 				TwistDie1 = getRandomElements(1, Twists1);
 				TwistDie2 = getRandomElements(1, Twists2);
-				theAnswer += ' ' + '+Twist: ' + TwistDie1[0] + ' ' + TwistDie2[0];
+				theAnswer += ' ' + '+Twist: ' + TwistDie1[0][0] + ' ' + TwistDie2[0][0];
 			}
 			addResultToStory(theAnswer, 'oracletext', 'd6 roll: '+ answerRoll, '', 'diceBtnExpand');
 		}
@@ -1455,8 +1455,8 @@ inspired by tinysolitarysoldiers.blogspot.com & others many thanks to Carsten, B
 			var theScenes=['Dramatic scene','Dramatic scene','Dramatic scene','Quiet scene','Quiet scene', 'Meanwhile...'];
 			
 			newScene = getRandomElements(1, theScenes); 
-			var sceneRollText = 'd6 roll: ' + newScene[1];
-			addResultToStory(newScene[0], "oracletext", sceneRollText, '', 'diceBtnExpand');
+			var sceneRollText = 'd6 roll: ' + newScene[0][1];
+			addResultToStory(newScene[0][0], "oracletext", sceneRollText, '', 'diceBtnExpand');
 		}
 		function showStoryDice(){
 			var numPics = 4, spritesX=12, spritesY=12, rollX, rollY;
