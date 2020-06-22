@@ -1522,13 +1522,13 @@ inspired by tinysolitarysoldiers.blogspot.com & others many thanks to Carsten, B
 			  }
 			  
 			  /* Clichés */
-			  if(rollDice('1d100','Y')<=75) clicheText += getRandomElements(1, appearance)[0]+' ';
-			  if(rollDice('1d100','Y')<=5) clicheText += getRandomElements(1, problems)[0]+' ';
-			  if(rollDice('1d100','Y')<=20) clicheText += getRandomElements(1, socialClass)[0]+' ';
-			  if(rollDice('1d100','Y')<=75) clicheText += getRandomElements(1, demeanor)[0]+' ';
-			  if(rollDice('1d100','Y')<=60) clicheText += getRandomElements(1, races)[0]+' ';
-			  if(rollDice('1d100','Y')<=10) clicheText += getRandomElements(1, timely)[0]+' ';
-			  if(rollDice('1d100','Y')<=90 || clicheText == '') clicheText += getRandomElements(1, classes)[0]+' ';
+			  if(rollDice('1d100','Y')<=75) clicheText += getRandomElements(1, appearance)[0][0]+' ';
+			  if(rollDice('1d100','Y')<=5) clicheText += getRandomElements(1, problems)[0][0]+' ';
+			  if(rollDice('1d100','Y')<=20) clicheText += getRandomElements(1, socialClass)[0][0]+' ';
+			  if(rollDice('1d100','Y')<=75) clicheText += getRandomElements(1, demeanor)[0][0]+' ';
+			  if(rollDice('1d100','Y')<=60) clicheText += getRandomElements(1, races)[0][0]+' ';
+			  if(rollDice('1d100','Y')<=10) clicheText += getRandomElements(1, timely)[0][0]+' ';
+			  if(rollDice('1d100','Y')<=90 || clicheText == '') clicheText += getRandomElements(1, classes)[0][0]+' ';
 			  
 				//charSheet.innerHTML = '';
 				if(charSheet.innerHTML !== ""){
