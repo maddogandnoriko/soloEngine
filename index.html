@@ -1484,8 +1484,8 @@ inspired by tinysolitarysoldiers.blogspot.com & others many thanks to Carsten, B
 			var newPlot;
 			if(howChoose == 'choose') return thePlots;
 			newPlot = getRandomElements(1, thePlots); 
-			var plotRollText = 'd' + thePlots.length + ' roll:'+ newPlot[1];
-			addResultToStory(newPlot[0], "oracletext", plotRollText, '', 'diceBtnExpand');
+			var plotRollText = 'd' + thePlots.length + ' roll:'+ newPlot[0][1];
+			addResultToStory(newPlot[0][0], "oracletext", plotRollText, '', 'diceBtnExpand');
 		}
 		function getReaction(){
 			var randReaction;
