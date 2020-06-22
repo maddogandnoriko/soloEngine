@@ -1478,7 +1478,7 @@ inspired by tinysolitarysoldiers.blogspot.com & others many thanks to Carsten, B
 		}
 		function randomModalDifficulty(){
 		  var newDifficult = getRandomElements(1, difficulties);
-			document.getElementById('checkDifficulty').value = newDifficult[0][1];
+			document.getElementById('checkDifficulty').value = newDifficult[0][0][1];
 		}
 		function pickAPlot(howChoose){
 			var newPlot;
@@ -1592,12 +1592,18 @@ inspired by tinysolitarysoldiers.blogspot.com & others many thanks to Carsten, B
 				updatelocalStorage();
 			}
 		function abilitySave() {
-			var rolls, selectOne, ability, abilityScore, saveTotal, boldText, matherator, textstyle, outcome, diceText;
+			var rolls, selectOne, ability, abilityScore, saveTotal, boldText, matherator, textstyle, outcome, diceText, difficulty;
 				
 			rolls = rollDice('2d20');
-			rolls =rolls[0];
+			rolls = rolls[0];
+			console.log(rolls);
 			selectOne = document.getElementById("abilitySelect");
 			ability = selectOne.options[selectOne.selectedIndex].text;
+		  difficultyClass = parseInt(document.getElementById("checkDifficulty").value);
+			if (isNaN(difficultyClass) || difficultyClass == null || difficultyClass == ""){
+				alert("Please enter a difficulty number.");
+				return;
+			}
 			abilityScore = parseInt(document.getElementById("abilityBonus").value);
 			if (isNaN(abilityScore) || abilityScore == null || abilityScore == ""){
 				alert("Please enter an ability bonus.");
@@ -1617,7 +1623,7 @@ inspired by tinysolitarysoldiers.blogspot.com & others many thanks to Carsten, B
 			if(saveTotal < 0) matherator = "";
 			else matherator = "+";
 			
-			if(saveTotal > 15){
+			if(saveTotal > difficultyClass){
 				outcome = "<span class='greentext'>Success</span>";
 			}else{
 				outcome = "<span class='redtext'>Fail</span>";
@@ -1630,6 +1636,7 @@ inspired by tinysolitarysoldiers.blogspot.com & others many thanks to Carsten, B
 			
 			addResultToStory(boldText, 'game_mechanics', diceText, outcome, 'checkModal');
 			document.getElementById("abilityBonus").value = "";
+			document.getElementById("checkDifficulty").value = "";
 		}
 		function changeAttackerAbility(){
 			var attackAbilityRadio = document.getElementById("attackAbilityRadio");
