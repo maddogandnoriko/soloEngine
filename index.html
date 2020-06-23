@@ -1517,7 +1517,7 @@ inspired by tinysolitarysoldiers.blogspot.com & others many thanks to Carsten, B
 				var newElement = document.createElement("p");
 				var nameLabel, nameText, clicheText='';
 				
-			  for(var i = 0;i < 6;i++){
+			  for(var i = 0;i < 5;i++){
 			    abilities.push(getAbilityScore());
 			  }
 			  
@@ -1543,21 +1543,25 @@ inspired by tinysolitarysoldiers.blogspot.com & others many thanks to Carsten, B
 				newElement.appendChild(document.createTextNode(': Character Name'));
 				newElement.appendChild(document.createElement("br"));
 
-
 				nameLabel = document.createElement("b");
 				nameLabel.appendChild(document.createTextNode('BODY'));
 				newElement.appendChild(nameLabel);
 				newElement.appendChild(document.createTextNode(': ' + abilities[0] + "\u00A0\u00A0"));
 
+        nameLabel = document.createElement("b");
+				nameLabel.appendChild(document.createTextNode('AGILE'));
+				newElement.appendChild(nameLabel);
+				newElement.appendChild(document.createTextNode(': ' + abilities[1] + "\u00A0\u00A0"));
+				
 				nameLabel = document.createElement("b");
 				nameLabel.appendChild(document.createTextNode('MIND'));
 				newElement.appendChild(nameLabel);
-				newElement.appendChild(document.createTextNode(': ' + abilities[1] + "\u00A0\u00A0"));
+				newElement.appendChild(document.createTextNode(': ' + abilities[2] + "\u00A0\u00A0"));
 
 				nameLabel = document.createElement("b");
 				nameLabel.appendChild(document.createTextNode('SPIRIT'));
 				newElement.appendChild(nameLabel);
-				newElement.appendChild(document.createTextNode(': ' + abilities[2]));
+				newElement.appendChild(document.createTextNode(': ' + abilities[3]));
 				newElement.appendChild(document.createElement("br"));
 
 				nameLabel = document.createElement("b");
