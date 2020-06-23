@@ -1211,7 +1211,7 @@ inspired by tinysolitarysoldiers.blogspot.com & others many thanks to Carsten, B
       var thingArray = JSON.parse(data);
       var newThing = getRandomElements(1, thingArray);
       console.log(newThing);
-     addResultToStory("", "generator_text", "", newThing[0], "generatorsBtnsexpand");
+     addResultToStory("", "generator_text", "", newThing[0][0], "generatorsBtnsexpand");
     };
 		function getRandomElements(numItems, tArray){
 			 // get random element(s) from array, do not repeat any, returns array with item selected AND roll #
