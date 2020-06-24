@@ -1397,15 +1397,20 @@ inspired by tinysolitarysoldiers.blogspot.com & others many thanks to Carsten, B
 				}
 			}
 				
+			var tRace;
 			clichesBox.innerHTML += "<b>Races</b><br>";
 			for (var i = 0; i < races.length; i++) {
+			  if(Array.isArray(races[i])){
+			    tRace = races[i][0];
+			  }else{
+          tRace = races[i];
+        }
 				if(i==races.length-1){
-					clichesBox.innerHTML += races[i]+"<br><br>";
+					clichesBox.innerHTML += tRace+"<br><br>";
 				}else{
-					clichesBox.innerHTML += races[i] + ", ";
+					clichesBox.innerHTML += tRace + ", ";
 				}
 			}
-			
 			clichesBox.innerHTML += "<b>Status</b><br>";
 			for (var i = 0; i < timely.length; i++) {
 				if(i==timely.length-1){
@@ -1527,7 +1532,14 @@ inspired by tinysolitarysoldiers.blogspot.com & others many thanks to Carsten, B
 			  if(rollDice('1d100','Y')<=5) clicheText += getRandomElements(1, problems)[0][0]+' ';
 			  if(rollDice('1d100','Y')<=20) clicheText += getRandomElements(1, socialClass)[0][0]+' ';
 			  if(rollDice('1d100','Y')<=75) clicheText += getRandomElements(1, demeanor)[0][0]+' ';
-			  if(rollDice('1d100','Y')<=60) clicheText += getRandomElements(1, races)[0][0]+' ';
+			  if(rollDice('1d100','Y')<=60){
+			    var tRace =  getRandomElements(1, races)[0][0];
+  			  if(Array.isArray(tRace)){
+  			    clicheText += tRace[0]+' ';
+  			  }else{
+            clicheText += tRace+' ';
+          }
+			  }
 			  if(rollDice('1d100','Y')<=10) clicheText += getRandomElements(1, timely)[0][0]+' ';
 			  if(rollDice('1d100','Y')<=90 || clicheText == '') clicheText += getRandomElements(1, classes)[0][0]+' ';
 			  
