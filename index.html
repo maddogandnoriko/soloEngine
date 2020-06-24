@@ -1523,26 +1523,32 @@ inspired by tinysolitarysoldiers.blogspot.com & others many thanks to Carsten, B
 				var newElement = document.createElement("p");
 				var nameLabel, nameText, clicheText='';
 				
-			  for(var i = 0;i < 5;i++){
+			  for(var i = 0;i < 4;i++){
 			    abilities.push(getAbilityScore());
 			  }
+        abilities.push(abilities[3]);
 			  
 			  /* Clichés */
 			  if(rollDice('1d100','Y')<=75) clicheText += getRandomElements(1, appearance)[0][0]+' ';
 			  if(rollDice('1d100','Y')<=5) clicheText += getRandomElements(1, problems)[0][0]+' ';
 			  if(rollDice('1d100','Y')<=20) clicheText += getRandomElements(1, socialClass)[0][0]+' ';
 			  if(rollDice('1d100','Y')<=75) clicheText += getRandomElements(1, demeanor)[0][0]+' ';
+			  
 			  if(rollDice('1d100','Y')<=60){
 			    var tRace =  getRandomElements(1, races)[0][0];
   			  if(Array.isArray(tRace)){
   			    clicheText += tRace[0]+' ';
+  			    if(tRace[1]==="M"){
+  			      abilities[4]=parseInt(abilities[4])+1;
+  			    }
   			  }else{
             clicheText += tRace+' ';
           }
 			  }
+			  
 			  if(rollDice('1d100','Y')<=10) clicheText += getRandomElements(1, timely)[0][0]+' ';
 			  if(rollDice('1d100','Y')<=90 || clicheText == '') clicheText += getRandomElements(1, classes)[0][0]+' ';
-			  
+			 
 				//charSheet.innerHTML = '';
 				if(charSheet.innerHTML !== ""){
 					nameLabel = document.createElement("hr");
@@ -1581,7 +1587,6 @@ inspired by tinysolitarysoldiers.blogspot.com & others many thanks to Carsten, B
 				nameLabel.appendChild(document.createTextNode('Level'));
 				newElement.appendChild(nameLabel);
 				newElement.appendChild(document.createTextNode(': 1\u00A0\u00A0'));
-
 				nameLabel = document.createElement("b");
 				nameLabel.appendChild(document.createTextNode('XP'));
 				newElement.appendChild(nameLabel);
@@ -1591,18 +1596,23 @@ inspired by tinysolitarysoldiers.blogspot.com & others many thanks to Carsten, B
 				nameLabel.appendChild(document.createTextNode('HP'));
 				newElement.appendChild(nameLabel);
 				newElement.appendChild(document.createTextNode(': ' + rollDice('1d8', 'Y')+'\u00A0\u00A0'));
-				//newElement.appendChild(document.createElement("br"));
-	      
 	      nameLabel = document.createElement("b");
 				nameLabel.appendChild(document.createTextNode('MAGIC'));
 				newElement.appendChild(nameLabel);
-				newElement.appendChild(document.createTextNode(': ' + abilities[3]));
+				newElement.appendChild(document.createTextNode(': ' + abilities[4]));
 				newElement.appendChild(document.createElement("br"));
-
 				nameLabel = document.createElement("b");
 				nameLabel.appendChild(document.createTextNode('Clichés'));
 				newElement.appendChild(nameLabel);
 				newElement.appendChild(document.createTextNode(': ' + clicheText));
+				newElement.appendChild(document.createElement("br"));
+				nameLabel = document.createElement("b");
+				nameLabel.appendChild(document.createTextNode('Gear'));
+				newElement.appendChild(nameLabel);
+				newElement.appendChild(document.createElement("br"));
+				newElement.appendChild(document.createTextNode("light weapon(d6 damage)"));
+				newElement.appendChild(document.createElement("br"));
+			  newElement.appendChild(document.createTextNode("leather armor(AC 12)"));
 				newElement.appendChild(document.createElement("br"));
 
 				charSheet.appendChild(newElement);
