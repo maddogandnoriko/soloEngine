@@ -1536,18 +1536,21 @@ inspired by tinysolitarysoldiers.blogspot.com & others many thanks to Carsten, B
 			  
 			  if(rollDice('1d100','Y')<=60){
 			    var tRace =  getRandomElements(1, races)[0][0];
-  			  if(Array.isArray(tRace)){
-  			    clicheText += tRace[0]+' ';
-  			    if(tRace[1]==="M"){
-  			      abilities[4]=parseInt(abilities[4])+1;
-  			    }
-  			  }else{
-            clicheText += tRace+' ';
-          }
+  			  clicheText += tRace[0]+' ';
+			    if(tRace[1]==="M"){
+			      abilities[4]=parseInt(abilities[4])+1;
+			    }
 			  }
 			  
 			  if(rollDice('1d100','Y')<=10) clicheText += getRandomElements(1, timely)[0][0]+' ';
-			  if(rollDice('1d100','Y')<=90 || clicheText == '') clicheText += getRandomElements(1, classes)[0][0]+' ';
+			  
+			  if(rollDice('1d100','Y')<=90 || clicheText == ''){
+			    var tClass =  getRandomElements(1, classes)[0][0];
+  			  clicheText += tClass[0]+' ';
+			    if(tClass[1]==="M"){
+			      abilities[4]=parseInt(abilities[4])+1;
+			    }
+			  }
 			 
 				//charSheet.innerHTML = '';
 				if(charSheet.innerHTML !== ""){
