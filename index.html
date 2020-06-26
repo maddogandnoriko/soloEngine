@@ -1552,7 +1552,24 @@ inspired by tinysolitarysoldiers.blogspot.com & others many thanks to Carsten, B
 			    }
 			  }
 			 
-				//charSheet.innerHTML = '';
+			 var startWeapon;
+			 var tWeapons=[];
+			 for(var i=0;i<itemsCatalog.length;i++){
+			   if(itemsCatalog[i][2] === 3 && itemsCatalog[i][3] === 'd6'){
+			   tWeapons.push(itemsCatalog[i][0]);
+			   }
+			 }
+			 startWeapon = getRandomElements(1, tWeapons)[0][0];
+			 
+			 var startArmor;
+			 var tArmor=[];
+			 for(var i=0;i<itemsCatalog.length;i++){
+			   if(itemsCatalog[i][2] === 2 && itemsCatalog[i][3] === 12){
+			   tArmor.push(itemsCatalog[i][0]);
+			   }
+			 }
+			 startArmor = getRandomElements(1, tArmor)[0][0];
+			 
 				if(charSheet.innerHTML !== ""){
 					nameLabel = document.createElement("hr");
 					newElement.appendChild(nameLabel);
@@ -1613,9 +1630,9 @@ inspired by tinysolitarysoldiers.blogspot.com & others many thanks to Carsten, B
 				nameLabel.appendChild(document.createTextNode('Gear'));
 				newElement.appendChild(nameLabel);
 				newElement.appendChild(document.createElement("br"));
-				newElement.appendChild(document.createTextNode("light weapon(d6 damage)"));
+				newElement.appendChild(document.createTextNode(startWeapon + "(d6 damage)"));
 				newElement.appendChild(document.createElement("br"));
-			  newElement.appendChild(document.createTextNode("leather armor(AC 12)"));
+			  newElement.appendChild(document.createTextNode(startArmor + "(AC 12)"));
 				newElement.appendChild(document.createElement("br"));
 
 				charSheet.appendChild(newElement);
@@ -2168,7 +2185,7 @@ inspired by tinysolitarysoldiers.blogspot.com & others many thanks to Carsten, B
 		  ['Gold Ring'],['3 SPs'],['Small petrified head'],['False teeth'],['Feather from rare bird'],['Obscured treasure map'],['2 small round stones'],['Love letter'],['Loose tein leather pouch'],['Small silver dagger'],['Gold bracelet (30 GPs)'],['Set of rusty keys'],['Wool cap'],['Pocket lint'],['Piece of moldy cheese'],['Flint & steel'],['Note regarding merchant caravan needing guards'],['Tent peg'],['Four leafed clover'],['Set of strings for lute'],['Pair of smelly socks with holes in them'],['few crushed herbs'],['Small bottle containing yellow liquid'],['Small change purse (no gold)'],['Bill of a duck'],['needle and thread'],['morbid shopping list (random body parts)'],['Small whetstone'],['sash with skull embroidered on it'],['3 beans'],['book detailing the rise and fall of an old empire'],['Lyrics and music to song'],['set of glowing large stones'],['Small cracked mirror'],['bloodied rag'],['Small finger trap (1d4 damage)'],['Hair clip'],['few wooden puzzle pieces'],['fishing hook and some line'],['Carved pipe'],['Small hand tools'],['Contract for murder'],['severed finger'],['rabbits foot'],['Necklace with green stone'],['Leather sling'],['bag of seeds'],['1 six sided dice'],['small rolled up tapestry depicting battle scene'],['religious symbol'],['small rodent (1d4 damage bite)'],['Small book with poems'],['vial containing slime that is moving'],['Brass ring'],['Belt buckle'],['3 playing cards'],['promissory note for gold'],['Bottle of poison'],['handkerchief'],['children’s toy top'],['letter detailing plot to overthrow the local government'],['Bits of leather straps'],['gold piece with hole drilled thru it'],['Small bone statue of an elk'],['recipe for mead'],['Letter of acceptance into mage’s school'],['knuckle bone'],['Blue crystal'],['Bits of gold thread (5 SPs)'],['Arrow head'],['Hand paper fan'],['Purple ladies gloves'],['potion of healing'],['spell book'],['Small water pouch'],['10 CPs'],['pair of rose coloured glasses'],['tooth from large cat'],['torn parchment'],['Leather key chain with no keys'],['Dagger +1'],['letter from local lord'],['ring of invisibility'],['jar of mysterious salve'],['broken hilt from sword'],['few chicken bones'],['map to city underground'],['The eye of monster'],['Tobacco rolled in large leaf'],['note about taxes being overdue'],['scroll containing spell'],['Wine cork'],['small metal sundial'],['Small telescope/sextant'],['Hand drawn picture of lonely cave entrance'],['Nail file'],['Keys to local tavern'],['Comb'],['Vial of oil for lantern'],['Folded piece of cloth with wolf embroidered on it'],['broken candle']
 			];
 		var itemsCatalog = [
-		  /* name, price, category: */
+		  /* name, price, category,damage: */
 	    /* categories:
 			   0= tools and gear 
 			   1= light
@@ -2184,14 +2201,15 @@ inspired by tinysolitarysoldiers.blogspot.com & others many thanks to Carsten, B
 			   11= henchmen
 			   12= buildings
 			*/
-		  ['Air Bladder',5,0],['Bear Trap',20,0]['Bedroll',10,0],['Bellows',10,0],['Black Grease',1,0],['Block and Tackle',30,0],['Book (Blank)',300,0],['Book (Reading)',600,0],['Bottle/Vial',1,0],['Bucket',5,0],['Caltrops (bag)',10,0],['Cards Deck',5,0],['Cards with an extra Ace',5,0],['Chain (10 ft)',10,0],['Chalk (10 pieces)',1,0],['Chisel',5,0],['Cookpots',10,0],['Crowbar',10,0],['Drill',10,0],['Face Paint/Makeup',10,0],['Fake Jewels',50,0],['Fishing Rod/Tackle',10,0],['Glass Marbles (bag)',5,0],['Glue (bottle)',1,0],['Grappling Hook',10,0],['Hammer',10,0],['Holy Water',25,0],['Horn',10,0],['Hourglass',300,0],['Incense (packet)',10,0],['Iron Tongs',10,0],['Ladder (10 ft)',10,0],['Large Sponge',5,0],['Lens',100,0],['Lockpicks',100,0],['Manacles',10,0],['Metal File',5,0],['Mirror (small, silver)',200,0],['Musical Instrument',200,0],['Nails (12)',5,0],['Net',10,0],['Oilskin Bag',5,0],['Oilskin Trousers',10,0],['Padlock and Key',20,0],['Perfume',50,0],['Pick',10,0],['Pole (10ft)',5,0],['Pulleys',5,0],['Quill and Ink',1,0],['Rope (50ft)',10,0],['Sack',1,0],['Saw',10,0],['Set of Dice',5,0],['Set of Loaded Dice',5,0],['Shovel',10,0],['Small Bell',20,0],['Soap',1,0],['Spike (iron)',5,0],['Spike (wood)',1,0],['Spiked boots',5,0],['Spyglass',1000,0],['Tar (Pot)',10,0],['Tent (3 man)',100,0],['Tent (personal)',50,0],['Twine (300 ft)',5,0],['Waterskin',5,0],['Whistle',5,0,1],
+		  ['Air Bladder',5,0],['Bear Trap',20,0],['Bedroll',10,0],['Bellows',10,0],['Black Grease',1,0],['Block and Tackle',30,0],['Book (Blank)',300,0],['Book (Reading)',600,0],['Bottle/Vial',1,0],['Bucket',5,0],['Caltrops (bag)',10,0],['Cards Deck',5,0],['Cards with an extra Ace',5,0],['Chain (10 ft)',10,0],['Chalk (10 pieces)',1,0],['Chisel',5,0],['Cookpots',10,0],['Crowbar',10,0],['Drill',10,0],['Face Paint/Makeup',10,0],['Fake Jewels',50,0],['Fishing Rod/Tackle',10,0],['Glass Marbles (bag)',5,0],['Glue (bottle)',1,0],['Grappling Hook',10,0],['Hammer',10,0],['Holy Water',25,0],['Horn',10,0],['Hourglass',300,0],['Incense (packet)',10,0],['Iron Tongs',10,0],['Ladder (10 ft)',10,0],['Large Sponge',5,0],['Lens',100,0],['Lockpicks',100,0],['Manacles',10,0],['Metal File',5,0],['Mirror (small, silver)',200,0],['Musical Instrument',200,0],['Nails (12)',5,0],['Net',10,0],['Oilskin Bag',5,0],['Oilskin Trousers',10,0],['Padlock and Key',20,0],['Perfume',50,0],['Pick',10,0],['Pole (10ft)',5,0],['Pulleys',5,0],['Quill and Ink',1,0],['Rope (50ft)',10,0],['Sack',1,0],['Saw',10,0],['Set of Dice',5,0],['Set of Loaded Dice',5,0],['Shovel',10,0],['Small Bell',20,0],['Soap',1,0],['Spike (iron)',5,0],['Spike (wood)',1,0],['Spiked boots',5,0],['Spyglass',1000,0],['Tar (Pot)',10,0],['Tent (3 man)',100,0],['Tent (personal)',50,0],['Twine (300 ft)',5,0],['Waterskin',5,0],['Whistle',5,0,1],
 		['Candle, 4 hours',1,1],['Lantern',30,1],['Lamp Oil, 4 hours',5,1],['Tinderbox',10,1],['Torch, 1 hour',1,1],
 		['Shield',40,2,'+1'],['Helmet',40,2,'+1'],['Gambeson',60,2,12],['Brigandine',500,2,13],['Chain',1200,2,14],['Half Plate',2,4000,15],['Full Plate',2,8000,16],
-		['Dagger, Cudgel, Sickle, Staff, etc.',5,3,'d6'],['Spear, Sword, Mace, Axe,Flail, etc.',10,3,'d8'],['Halberd, War Hammer,Long Sword, Battle Axe, etc.',20,3,'d10'],['Sling',5,3,'d4'],['Bow',15,3,'d6'],['Crossbow',60,3,'d8'],['Arrows (20)',5,4],['Quiver (capacity 20)',10,4],
+	  ['Dagger',5,3,'d6'],['Cudgel',5,3,'d6'],['Sickle',5,3,'d6'],['Staff',5,3,'d6'],
+		['Spear, Sword, Mace, Axe,Flail, etc.',10,3,'d8'],['Halberd, War Hammer,Long Sword, Battle Axe, etc.',20,3,'d10'],['Sling',5,3,'d4'],['Bow',15,3,'d6'],['Crossbow',60,3,'d8'],['Arrows (20)',5,4],['Quiver (capacity 20)',10,4],
 		['Poor',10,5],['Standard',50,5],['Noble',3000,5],['Furs',5000,5],['Winter',100,5],
 		['Travel rations (1 day)',5,6],['Animal Feed (1 day)',2,6],['Bacon, side of',10,6],['Bread, 1 loaf',1,6],['Cheese, 1 lb',2,6],['Cider, 4 gallons',1,6],['Cod, whole',20,6],['Eggs, 24',1,6],['Flour, 5 lbs',1,6],['Fruit, 1 lb',1,6],['Garlic, bunch',1,6],['Grain, 1 bushel (8 gal.)',4,6],['Herbs, 1 bunch',1,6],['Lard, 5 lbs',1,6],['Onions, 1 bushel',8,6],['Salt, 1 bushel',3,6],['Spices, 1 lb',100,6],['Sugar, 1 lb',12,6],['Wine/ale, bottle',1,6],
 		['Chicken',1,7],['Cow',100,7],['Dog, hunting',50,7],['Dog, small but vicious',20,7],['Donkey/Pack Horse',300,7],['Goat',10,7],['Hawk',1000,7],['Horse, riding',1000,7],['Horse, war',10000,7],['Ox',300,7],['Pig',30,7],['Sheep',15,7],
-		['Bed, per night',1,8],['Private room, per night',2,8],['Meal',2,8],['Hot bath',2,8],['Stabling and fodder',2,8]
+		['Bed, per night',1,8],['Private room, per night',2,8],['Meal',2,8],['Hot bath',2,8],['Stabling and fodder',2,8],
 		['Ship, high quality',720,9],['Ship, good quality',480,9],['Ship, used quality',240,9],['Ship, poor quality',120,9],['Raft',50,9],['Fishing boat',500,9],['Sloop',5000,9],['Caravel',25000,9],['Galleon',125000,9],['Carriage',320,10],['Cart',50,10],['Wagon',120,10],
 		['Laborer',1,11],['Scribe',2,11],['Archer',3,11],['Mason',4,11],['Man-at-arms, on foot',6,11],['Armorer or Blacksmith',8,11],['Man-at-arms, mounted',12,11],['Master Builder',15,11],['Barber-Surgeon',25,11],['Knight',25,11],
 		['Hovel',120,12],['Row House',1200,12],['Craftsman’s House',2400,12],['Merchant’s House',7200,12],['House with Courtyard',21600,12],['Guildhall',32600,12],['Stone Tower',48000,12],['Temple',75000,12],['Stronghold',100000,12],['Cathedral',500000,12],['Imperial Palace',2500000,12]
