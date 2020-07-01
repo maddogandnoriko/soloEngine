@@ -58,16 +58,16 @@ var namesArray = [
   ], /* Angel(Female) */
       [
   "Angel(male)","Yurkemo","Metatron","Ofaniel","Padael","Thegri","Harabael","Zagzagel","Sandalphon","Bahut","Velon","Galitzur","Adirion","Archas","Israfil","Cherubiel","Dagiel","Fanuel","Admael","Kemuel","Tebliel"
-  ], /*  */
+  ], /* Angel(male) */
       [
   "Demon","Erathaol","Nagrasagiel","Kezef","Dachiel","Hemah","Lahatiel","Dumah","Semhazai","Makatiel","Abaddon","Hutriel","Kushiel","Af","Shoftiel","Kipod","Puruel","Mekalleh","Hariel","Pusiel","Rogziel"
-  ], /*  */
+  ], /* Demon */
       [
   "Human(male)","John","Thomas","William","Richard","Robert","Edward","George","Henry","James","Francis","Nicholas","Matthew","Christopher","Anthony","Samuel","Michael","Edmund","Ralph","Peter","Andrew","Aseir","Haseid","Kheed","Zasheir","Fodel","Glar","Grigor","Igan","Ivor","Kosef","Mival","Pavel","Sergor","Darvin","Dorn","Evendur","Gorstag","Helm","Morn","Randal","Stedd","Ander","Blath","Bran","Frath","Geth","Lander","Luth","Malcer","Stor","Taman","Bareris","Kethoth","Mumed","Urhur","Borivik","Faurgar","Jandar","Kanithar","Madislak","Ralmevik","Shaumar","Vladislak","Chen","Chi","Fai","Jiang","Jun","Lian","Long","Meng","Shan","Wen","Anton","Diero","Marcon","Pieron","Rimardo","Romero","Salazar","Umbero"
-  ], /*  */
+  ], /* Human(male) */
       [
   "Human(female)","Elizabeth","Mary","Anne","Margaret","Alice","Jane","Joan","Agnes","Catherine","Isabel","Susanna","Dorothy","Elinor","Ellen","Sarah","Frances","Grace","Bridget","Margery","Martha","Atala","Ceidil","Hama","Jasmal","Meilil","Yasheira","Zasheida","Arveene","Esvele","Jhessail","Kerri","Lureene","Miri","Rowan","Tessele","Alethra","Kara","Katernin","Mara","Natali","Olma","Tana","Zora Betha","Cefrey","Kethra","Mara","Olga","Silifrey","Westra","Arizima","Chathi","Nephis","Nulara","Murithi","Sefris","Thola","Umara","Zolis","Hulmarra","Immith","Imzel","Navarra","Shevarra","Tammith. Yuldra","Bai","Chao","Jia","Lei","Mei","Qiao","Shui","Tai","Balama","Dona","Faila","Jalana","Luisa","Marta","Quara","Selise","Vonda"
-  ], /*  */
+  ], /* Human(Female) */
       [
   "Human(surname)","Dumein","Jassan","Khalid","Mostana","Pashar","Rein","Amblecrown","Buckman","Dundragon","Evenwood","Greycastle","Tallstag","Bersk","Chernin","Dotsk","Kulenov","Marsk","Nemetsk","Shemov","Starag","Brightwood","Helder","Hornraven","Lackman","Storm wind","Windrivver","Anskuld","Fezim","Hahpet","Nathandem","Sepret","Chergoba","Dyernina","Ulmokina","Chien","Huang","Kao","Kung","Lao","Ling","Mei","Pin","Shin","Sum","Tan","Wan","Agosto","Astorio","Calabra","Domine","Falone","Marivaldi","Pisacar"
   ], /* Human(surname) */

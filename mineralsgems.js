@@ -1,0 +1,7 @@
+var mineralsGemsList = [
+  "Agate","Amber","Amethyst","Amphibole","Andesite","Anglesite","Apatite","Aquamarine","Argentite","Arsenopyrite","Axinite","Baryte","Basalt","Bauxite","Beryl","Bornite","Bowenite","Calcite","Cassiterite","Chrysocolla","Cinnabar","Clinohumite","Coal","Cobaltite","Corundum","Cryolite","Diamond","Dolomite","Emerald","Erythrite","Feldspar","Fluorite","Galena","Garnet","Geode","Gneiss","Gold","Granite","Gypsum","Halite","Hematite","Hornblende","Ilmenite","Jade","Jasper","Kernite","Kyanite","Limestone","Magnetite","Malachite","Manganese","Marble","Moissanite","Molybdenite","Obsidian","Opal","Orthoclase","Petrified Wood","Peridot","Pyrargyrite","Pyrite","Pyromorphite","Quartz","Realgar","Rhodium","Rhodochrosite","Ruby","Sandstone","Sapphire","Scheelite","Schist","Slate","Shale","Soda","Niter","Sphalerite","Staurolite","Stibnite","Sugilite","Sulfur","Syenite","Sylvite","Talc","Tiger’s Eye","Topaz","Tourmaline","Tungsten","Turquoise","Zircon"
+];
+var MetalsList = [
+  "Iron","Aluminum","Lithium","Tin","Nickel","Meteoric Iron","Magnetite","Copper","Brass","Bronze","Mithril","Adamantine","Gold","silver","bismuth","lead","steel","titanium","Osmium","Palladium","platinum","tungsten","tungsten carbide","uranium","electrum","pewter","zinc","Cast iron","Iridium"];
+var BasicGemsList = [
+  'bloodstone','carnelian','chrysophrase','citrine','jasper','moonstone','onyx',"amber",'quartz','zircon','aquamarine','black pearl','peridot','topaz','sapphire','ruby','emerald','amethyst','diamond'];
