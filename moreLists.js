@@ -20,4 +20,5 @@ var OtherPlantsList = [
 var LeathersList = [
   "Cow","Basilisk","Dragon","Hydra","Gorgon","Crocodile","Sarcosuchus","Tyrannosaur","Lamb","Boar","Dire Boar","Chimera","Manticore","Direwolf","Devil","Demon","Fiend","Marilith","Yuan-Ti","Neothelid","Purple Worm","Quaggoth","Grimlock","Orc","Gnoll","Hyena","Unicorn","Pegasus","Kirin","Glabrezu","Imp","Dretch","Minotaur","Goristro","Behir","Griffon","Griffin","Gryphon","Hippogriff","Wyvern"];
 var ColorList = [
-  "white","grey","black",'red',"orange","yellow","green","indigo","violet",'lavender','rose','crimson',"pink","brown","blue","orange","russet","umber","cyan","celadon","amaranth","saffron","aquamarine","ultramarine","diamond","cinnabar","sienna","sepia","maroon
+  "white","grey","black",'red',"orange","yellow","green","indigo","violet",'lavender','rose','crimson',"pink","brown","blue","orange","russet","umber","cyan","saffron","aquamarine","sienna","sepia","maroon","blood-red","ochre"
+];
